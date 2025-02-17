@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="index.css" />
+    <title>Web Components</title>
+    <script src="/webcomponent-multipage/webComponent.js" type="module"></script>
+</head>
+<body>
+    <div class="wrapper">
+        <header>
+            <h1>
+                Simple Multi-Page Website Using Web Components
+            </h1>
+        </header>
+        <nav>
+            <h3>Navigation</h3>
+            <div id="page-links">
+                <span class="nav-link" id="home">home</span>
+                <span class="nav-link" id="page1">page 1</span>
+                <span class="nav-link" id="page2">page 2</span>
+                <span class="nav-link" id="page3">page 3</span>
+            </div>   
+        </nav>
+        <section id="content">
+            
+        </section>
+        <footer>
+            <span>by aa-coding, February 2025</span>
+        </footer>
+    </div>
+
+    <template id="home-content">
+        <div id="main-content">
+            <h3>
+                Hi! Thanks for visiting.
+            </h3>
+            <p>
+                After a long break from web dev, it feels great to be back in the saddle! This project did not prioritize design and user interface, but while it perhaps lacks in beauty, it was an exercise in using web components to de-couple structure and content in such a way that new pages can be added and the markup can be changed with ease. Here, index.html defines the overall structure of the website. However, page links on navigation bar actually fire off javascript functions that display a custom element -a web component- in the page. This web component comprises the structure for new page content, but the content itself is stored in an array of javascript objects, where each object contains the content or path to the content of each page. Thus, adding a new page simply means adding a page link on the navigation bar and a corresponding javascript object in the aforementioned array. This means that markup can be changed once for all content, since content and structure are mainly de-coupled. A simple sort of routing was achieved by listening for URL hash changes (the forward and back buttons should work properly). 
+            </p>
+        </div>
+    </template>
+</body>
+<script src="/webcomponent-multipage/main.js"></script>
+</html>
