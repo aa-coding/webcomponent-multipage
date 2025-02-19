@@ -4,7 +4,6 @@ class PageContent extends HTMLElement {
     constructor() {
         super();
         this.attachShadow({ mode: "open" });
-        const template = document.querySelector("#content-template");
         this.shadowRoot.innerHTML = `
             <style>
                 div {
